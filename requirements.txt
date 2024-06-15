@@ -9,3 +9,4 @@ Flask==2.0.1
 pyfcm==1.5.4
 razorpay==1.2.0
 Werkzeug==2.2.2
+setuptools
