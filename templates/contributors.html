@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Sofia|ABeeZee' rel='stylesheet'>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link rel="icon" href="https://dhitifoundation.com/wp-content/uploads/2020/12/cropped-DHITI-FULL-NEW-LOGO-3-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://dhitifoundation.com/wp-content/uploads/2020/12/cropped-DHITI-FULL-NEW-LOGO-3-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://dhitifoundation.com/wp-content/uploads/2020/12/cropped-DHITI-FULL-NEW-LOGO-3-180x180.png" />
+    <title>Live</title>
+</head>
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    body,
+    html {
+        background-color: #ffffff;
+    }
+
+    body,
+    p,
+    input,
+    select,
+    textarea,
+    button {
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: -0.2px;
+        font-size: 16px;
+    }
+
+    form {
+        padding: 16px;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .segment {
+        padding: 32px 0;
+        text-align: center;
+    }
+
+    button {
+        border: 0;
+        outline: 0;
+        font-size: 12px;
+        border-radius: 320px;
+        padding: 10px;
+        background-color: #ffffff;
+        text-shadow: 1px 1px 0 #fff;
+        font-family: ABeeZee;
+        letter-spacing: 2px;
+
+    }
+
+
+
+
+
+    button {
+        color: #61677c;
+        font-weight: bold;
+        box-shadow: -2px -2px 5px #babecc, 2px 2px 5px #cccfda;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        font-weight: 600;
+
+    }
+
+    button:active {
+        box-shadow: inset 1px 1px 2px #cccfda, inset -1px -1px 2px #fff;
+    }
+
+
+    button.black {
+        display: block;
+
+        width: 25%;
+        color: #0f0e0e;
+    }
+
+
+
+    .img {
+        border-radius: 20px;
+
+    }
+
+    .main_card {
+        border: 0;
+        outline: 0;
+        font-size: 15px;
+        border-radius: 20px;
+        box-shadow: -2px -2px 5px #d7d9e0, 2px 2px 5px #d7d9e0;
+    }
+
+    .main_card_text {
+        text-align: left;
+        font-size: 15px;
+        font-family: ABeeZee;
+    }
+
+    .contri {
+        border-radius: 20px;
+        box-shadow: -2px -2px 5px #d7d9e0, 2px 2px 5px #d7d9e0;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .card_down_text {
+        font-family: ABeeZee;
+        font-size: 13px;
+    }
+
+    .data {
+        width: 70%;
+    }
+
+    .hide {
+        font-family: ABeeZee;
+    }
+
+    .hide_div {
+        margin-left: 70%;
+    }
+
+    .how {
+        font-family: ABeeZee;
+    }
+
+    .amounts {
+        border-radius: 20px;
+        border: 1px solid gray;
+        box-shadow: none;
+        padding: 10px;
+    }
+
+    #left {
+        float: left;
+        width: 40%;
+
+
+
+    }
+
+    #right {
+        float: right;
+        width: 40%;
+
+
+    }
+
+    #or {
+        font-size: 15px;
+    }
+
+    .proceed {
+        border-radius: 20px;
+        padding: 10px;
+        color: rgb(15, 90, 230);
+
+    }
+    .name{
+        text-align: left;
+        color:rgb(65, 2, 2)
+    }
+    .date{
+        text-align: left;
+        font-size: 15px;
+        color:rgb(65, 2, 2)
+    }
+    .date_{
+        text-align: left;
+        font-size: 15px;
+        color:rgb(65, 2, 2)
+    }
+    ul {
+        list-style: none;
+          padding-left: 5px;
+      }
+      ul li {
+        display: inline-block;
+        background-color: rgb(65, 2, 2);
+        margin-top: 10px;
+        border-radius: 50%;
+      }
+      ul li a {
+        color: white;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        text-decoration: none;
+        height: 50px;
+        width: 50px;
+      }
+      ul li a:hover, ul li a:active {
+        color: lightsalmon;
+        text-decoration: none;
+      }
+</style>
+
+<body>
+
+    <center>
+
+        <h2 class="hide my-4" style="letter-spacing: 2px;"><b> Contributors</b></h2>
+        {% for key,val in result.items()%}
+        <div class="card">
+            <div class="row">
+                <div class="col-11">
+
+          
+                      <ul style="float:left" class="mx-2">
+                          <li><a href="#">S</a></li>
+                          </ul>
+                   
+                    <p class = "name p-0 mx-2 my-2"><b>{{val['name']}}</b></p>
+                    <p class="date p-0 mx-2 ">{{val['paid_on']}}</p>
+                    
+                </div>
+                <div class="col-1 date_ my-4">
+                    <p style="float:right" class="mx-4"><b>₹{{val['amount_paid']}}</b></p>
+                </div>
+        
+
+               
+        </div>
+        {% endfor %}
+
+       
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

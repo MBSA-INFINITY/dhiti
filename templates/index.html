@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="https://dhitifoundation.com/wp-content/uploads/2020/12/cropped-DHITI-FULL-NEW-LOGO-3-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://dhitifoundation.com/wp-content/uploads/2020/12/cropped-DHITI-FULL-NEW-LOGO-3-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://dhitifoundation.com/wp-content/uploads/2020/12/cropped-DHITI-FULL-NEW-LOGO-3-180x180.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Sofia|ABeeZee' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <title>test</title>
+</head>
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    body,
+    html {
+        background-color: #ffffff;
+    }
+
+    body,
+    p,
+    input,
+    select,
+    textarea,
+    button {
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: -0.2px;
+        font-size: 16px;
+    }
+
+    form {
+        padding: 16px;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .segment {
+        padding: 32px 0;
+        text-align: center;
+    }
+
+    button {
+        border: 0;
+        outline: 0;
+        font-size: 12px;
+        border-radius: 320px;
+        padding: 10px;
+        background-color: #ffffff;
+        text-shadow: 1px 1px 0 #fff;
+        font-family: ABeeZee;
+        letter-spacing: 2px;
+
+    }
+
+
+
+
+
+    button {
+        color: #61677c;
+        font-weight: bold;
+        box-shadow: -2px -2px 5px #babecc, 2px 2px 5px #cccfda;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        font-weight: 600;
+
+    }
+
+    button:active {
+        box-shadow: inset 1px 1px 2px #cccfda, inset -1px -1px 2px #fff;
+    }
+
+
+    button.black {
+        display: block;
+
+        width: 25%;
+        color: #0f0e0e;
+    }
+
+
+
+    .img {
+        border-radius: 20px;
+
+    }
+
+    .main_card {
+        border: 0;
+        outline: 0;
+        font-size: 15px;
+        border-radius: 20px;
+        box-shadow: -2px -2px 5px #d7d9e0, 2px 2px 5px #d7d9e0;
+    }
+
+    .main_card_text {
+        text-align: left;
+        font-size: 15px;
+        font-family: ABeeZee;
+    }
+
+    .contri {
+        border-radius: 20px;
+        box-shadow: -2px -2px 5px #d7d9e0, 2px 2px 5px #d7d9e0;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .card_down_text {
+        font-family: ABeeZee;
+        font-size: 13px;
+    }
+
+    .data {
+        width: 70%;
+    }
+
+    .hide {
+        font-family: ABeeZee;
+    }
+
+    .hide_div {
+        margin-left: 70%;
+    }
+
+    .how {
+        font-family: ABeeZee;
+    }
+
+    .amounts {
+        border-radius: 20px;
+        border: 1px solid gray;
+        box-shadow: none;
+        padding: 10px;
+    }
+
+    #left {
+        float: left;
+        width: 40%;
+
+
+
+    }
+
+    #right {
+        float: right;
+        width: 40%;
+
+
+    }
+
+    #or {
+        font-size: 15px;
+    }
+
+    .proceed {
+        border-radius: 20px;
+        padding: 10px;
+        color: rgb(15, 90, 230);
+
+    }
+</style>
+
+<body>
+
+    <center>
+
+        <h2 class="hide my-4" style="letter-spacing: 2px;"><b> Contribution</b></h2>
+
+
+        <div class="card main_card m-3" style="width: 20rem;">
+            <img src={{image_link}} class="card-img-top img" height="200" alt="Load Image">
+            <div class="card-body">
+                <p class="card-text main_card_text"><b> {{goal}}</b></p>
+                <p style="text-align: left;font-family:ABeeZee;margin-top:0;font-size:13px">by Dhiti Foundation</p>
+            </div>
+        </div>
+        <p class="card_down_text">Most Contributor's contribute approx ₹500 to this</p>
+        <input class="form-control data contri" type="text" placeholder="Enter Your Name"
+            aria-label="default input example" id="name_entry_box" name="user_name">
+        <div class="hide_div my-3">
+            <input class="form-check-input my-2" type="checkbox" value="" id="flexCheckDefault" name="hide_identity">
+            <label for="flexCheckDefault" class="my-1 hide">Hide Identity</label>
+        </div>
+
+        <h3 class="how my-3">How much do you want <br>to contribute?</h3>
+        <input class="form-control data contri my-2" type="number" placeholder="Enter Amount"
+            aria-label="default input example" id="user_amount" name="user_amount">
+
+
+        <i>or</i>
+
+
+
+
+
+        <button class="form-control data amounts my-2" onclick="fill(this)">₹1000</button>
+        <button class="form-control data amounts my-2" onclick="fill(this)">₹500 </button>
+        <button class="form-control data amounts my-2" onclick="fill(this)">₹300 </button>
+        <button id="rzp-button1" class="form-control data my-5 proceed"><b>Proceed<i class="fa fa-check mx-2"
+                    aria-hidden="true"></i></b></button>
+
+
+
+
+    </center>
+
+    <script>
+        var checkbox = document.querySelector("input[name=hide_identity]");
+
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                document.getElementById("name_entry_box").value = "Well-Wisher"
+                document.getElementById("name_entry_box").disabled = true
+                sessionStorage.setItem("user_name",document.getElementById("name_entry_box").value)
+            } else {
+                document.getElementById("name_entry_box").value = ""
+                document.getElementById("name_entry_box").disabled = false
+                sessionStorage.setItem("user_name","")
+
+            }
+        });
+    
+
+        var options = {
+            "key": "rzp_live_aMMq9dNRsFedsd", // Enter the Key ID generated from the Dashboard
+            "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "DHITI FOUNDATION",
+            "description": "Live Transaction",
+            "image": "https://firebasestorage.googleapis.com/v0/b/portfoliomanagement-16f09.appspot.com/o/dhiti.png?alt=media&token=36b6e666-591e-4b80-8daa-a81495ceb786",
+            "callback_url": "/charges",
+            // "prefill": {
+            //     "name": "Gaurav Kumar",
+            //     "contact": "9999999999"
+            // },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            // "theme": {
+            //     "color": "ED0717"
+            // }
+        };
+        var rzp1 = new Razorpay(options);
+//  
+        document.getElementById('rzp-button1').onclick = function (e) {
+            rzp1.open();
+            e.preventDefault();
+        }
+
+        document.getElementById("user_amount").addEventListener('input', function () {
+            options["amount"] = document.getElementById("user_amount").value * 100
+            options["callback_url"] = "/charges/"+document.getElementById("name_entry_box").value.toString()+"/"+document.getElementById("user_amount").value.toString(),
+            rzp1 = new Razorpay(options);
+        })
+        document.getElementById("name_entry_box").addEventListener('input', function () {
+            options["callback_url"] = "/charges/"+document.getElementById("name_entry_box").value.toString()+"/"+document.getElementById("user_amount").value.toString(),
+            rzp1 = new Razorpay(options);
+        })
+
+        function fill(element) {
+            document.getElementById("user_amount").value = parseInt(element.innerHTML.slice(1,))
+            options["amount"] = document.getElementById("user_amount").value * 100;
+            options["callback_url"] = "/charges/"+document.getElementById("name_entry_box").value.toString()+"/"+document.getElementById("user_amount").value.toString(),
+            rzp1 = new Razorpay(options);
+            sessionStorage.setItem("user_amount", parseInt(element.innerHTML.slice(1,)));
+        }
+        document.getElementById("name_entry_box").addEventListener("input",()=>{
+                        sessionStorage.setItem("user_name",document.getElementById("name_entry_box").value)
+        })
+        document.getElementById("user_amount").addEventListener("input",()=>{
+                        sessionStorage.setItem("user_amount",document.getElementById("user_amount").value)
+        })
+       
+    </script>
+        <script defer> 
+   document.getElementById("user_amount").value = parseInt(localStorage.getItem("__amount__"));
+   options["amount"] = parseInt(localStorage.getItem("__amount__"))*100
+   rzp1 = new Razorpay(options);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
